@@ -1,0 +1,12 @@
+package ncu.jerry.orangeplus;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class OrangeplusApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(OrangeplusApplication.class, args);
+	}
+}
