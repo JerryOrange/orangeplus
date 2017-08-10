@@ -1,0 +1,29 @@
+###################  项目启动端口  ###################
+server:
+  port: 80
+
+###################  spring配置  ###################
+spring:
+  profiles:
+    active: dev
+  mvc:
+    static-path-pattern: /static/**
+    view:
+      prefix: /WEB-INF/view
+  devtools:
+    restart:
+      enabled: true #是否开启开发者工具（true/false）
+      additional-paths: src/main/java
+      exclude: static/**,WEB-INF/view/**
+
+---
+##########################################################
+###################  开发环境的profile  ###################
+##########################################################
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/orangeplus?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
