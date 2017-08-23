@@ -6,17 +6,17 @@
 	<resultMap id="BaseResultMap" type="ncu.jerry.orangeplus.modules.sys.entity.Menu">
 		<id column="id" property="id" />
 		<result column="code" property="code" />
-		<result column="pcode" property="pcode" />
-		<result column="pcodes" property="pcodes" />
+		<result column="p_code" property="pCode" />
+		<result column="p_codes" property="pCodes" />
 		<result column="name" property="name" />
 		<result column="icon" property="icon" />
 		<result column="url" property="url" />
 		<result column="num" property="num" />
 		<result column="levels" property="levels" />
-		<result column="ismenu" property="ismenu" />
+		<result column="is_menu" property="isMenu" />
 		<result column="tips" property="tips" />
 		<result column="status" property="status" />
-		<result column="isopen" property="isopen" />
+		<result column="is_open" property="isOpen" />
 	</resultMap>
 
 </mapper>

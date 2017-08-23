@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 
 /**
  * <p>
- * 部门 前端控制器
+ * 部门表 前端控制器
  * </p>
  *
  * @author Jiacheng
- * @since 2017-08-11
+ * @since 2017-08-23
  */
 @Controller
 @RequestMapping("/dept")

@@ -14,10 +14,10 @@
 		<result column="sex" property="sex" />
 		<result column="email" property="email" />
 		<result column="phone" property="phone" />
-		<result column="roleid" property="roleid" />
-		<result column="deptid" property="deptid" />
+		<result column="role_id" property="roleId" />
+		<result column="dept_id" property="deptId" />
 		<result column="status" property="status" />
-		<result column="createtime" property="createtime" />
+		<result column="create_time" property="createTime" />
 		<result column="version" property="version" />
 	</resultMap>
 

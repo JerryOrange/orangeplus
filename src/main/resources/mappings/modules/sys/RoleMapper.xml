@@ -6,9 +6,9 @@
 	<resultMap id="BaseResultMap" type="ncu.jerry.orangeplus.modules.sys.entity.Role">
 		<id column="id" property="id" />
 		<result column="num" property="num" />
-		<result column="pid" property="pid" />
+		<result column="p_id" property="pId" />
 		<result column="name" property="name" />
-		<result column="deptid" property="deptid" />
+		<result column="dept_id" property="deptId" />
 		<result column="tips" property="tips" />
 		<result column="version" property="version" />
 	</resultMap>

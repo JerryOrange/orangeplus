@@ -2,6 +2,7 @@ package ncu.jerry.orangeplus.modules.sys.entity;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Jiacheng
- * @since 2017-08-11
+ * @since 2017-08-23
  */
 public class Dept extends Model<Dept> {
 
@@ -29,19 +30,23 @@ public class Dept extends Model<Dept> {
     /**
      * 父部门id
      */
-	private Integer pid;
+	@TableField("p_id")
+	private Integer pId;
     /**
      * 父级ids
      */
-	private String pids;
+	@TableField("p_ids")
+	private String pIds;
     /**
      * 简称
      */
-	private String simplename;
+	@TableField("simple_name")
+	private String simpleName;
     /**
      * 全称
      */
-	private String fullname;
+	@TableField("full_name")
+	private String fullName;
     /**
      * 提示
      */
@@ -68,36 +73,36 @@ public class Dept extends Model<Dept> {
 		this.num = num;
 	}
 
-	public Integer getPid() {
-		return pid;
+	public Integer getpId() {
+		return pId;
 	}
 
-	public void setPid(Integer pid) {
-		this.pid = pid;
+	public void setpId(Integer pId) {
+		this.pId = pId;
 	}
 
-	public String getPids() {
-		return pids;
+	public String getpIds() {
+		return pIds;
 	}
 
-	public void setPids(String pids) {
-		this.pids = pids;
+	public void setpIds(String pIds) {
+		this.pIds = pIds;
 	}
 
-	public String getSimplename() {
-		return simplename;
+	public String getSimpleName() {
+		return simpleName;
 	}
 
-	public void setSimplename(String simplename) {
-		this.simplename = simplename;
+	public void setSimpleName(String simpleName) {
+		this.simpleName = simpleName;
 	}
 
-	public String getFullname() {
-		return fullname;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 
 	public String getTips() {
@@ -126,10 +131,10 @@ public class Dept extends Model<Dept> {
 		return "Dept{" +
 			"id=" + id +
 			", num=" + num +
-			", pid=" + pid +
-			", pids=" + pids +
-			", simplename=" + simplename +
-			", fullname=" + fullname +
+			", pId=" + pId +
+			", pIds=" + pIds +
+			", simpleName=" + simpleName +
+			", fullName=" + fullName +
 			", tips=" + tips +
 			", version=" + version +
 			"}";

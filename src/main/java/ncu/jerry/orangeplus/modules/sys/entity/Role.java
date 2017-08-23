@@ -2,6 +2,7 @@ package ncu.jerry.orangeplus.modules.sys.entity;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Jiacheng
- * @since 2017-08-11
+ * @since 2017-08-23
  */
 public class Role extends Model<Role> {
 
@@ -29,7 +30,8 @@ public class Role extends Model<Role> {
     /**
      * 父角色id
      */
-	private Integer pid;
+	@TableField("p_id")
+	private Integer pId;
     /**
      * 角色名称
      */
@@ -37,7 +39,8 @@ public class Role extends Model<Role> {
     /**
      * 部门名称
      */
-	private Integer deptid;
+	@TableField("dept_id")
+	private Integer deptId;
     /**
      * 提示
      */
@@ -64,12 +67,12 @@ public class Role extends Model<Role> {
 		this.num = num;
 	}
 
-	public Integer getPid() {
-		return pid;
+	public Integer getpId() {
+		return pId;
 	}
 
-	public void setPid(Integer pid) {
-		this.pid = pid;
+	public void setpId(Integer pId) {
+		this.pId = pId;
 	}
 
 	public String getName() {
@@ -80,12 +83,12 @@ public class Role extends Model<Role> {
 		this.name = name;
 	}
 
-	public Integer getDeptid() {
-		return deptid;
+	public Integer getDeptId() {
+		return deptId;
 	}
 
-	public void setDeptid(Integer deptid) {
-		this.deptid = deptid;
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
 	}
 
 	public String getTips() {
@@ -114,9 +117,9 @@ public class Role extends Model<Role> {
 		return "Role{" +
 			"id=" + id +
 			", num=" + num +
-			", pid=" + pid +
+			", pId=" + pId +
 			", name=" + name +
-			", deptid=" + deptid +
+			", deptId=" + deptId +
 			", tips=" + tips +
 			", version=" + version +
 			"}";

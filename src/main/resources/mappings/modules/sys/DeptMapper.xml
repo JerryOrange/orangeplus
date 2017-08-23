@@ -6,10 +6,10 @@
 	<resultMap id="BaseResultMap" type="ncu.jerry.orangeplus.modules.sys.entity.Dept">
 		<id column="id" property="id" />
 		<result column="num" property="num" />
-		<result column="pid" property="pid" />
-		<result column="pids" property="pids" />
-		<result column="simplename" property="simplename" />
-		<result column="fullname" property="fullname" />
+		<result column="p_id" property="pId" />
+		<result column="p_ids" property="pIds" />
+		<result column="simple_name" property="simpleName" />
+		<result column="full_name" property="fullName" />
 		<result column="tips" property="tips" />
 		<result column="version" property="version" />
 	</resultMap>

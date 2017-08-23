@@ -2,6 +2,7 @@ package ncu.jerry.orangeplus.modules.sys.entity;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Jiacheng
- * @since 2017-08-11
+ * @since 2017-08-23
  */
 public class Menu extends Model<Menu> {
 
@@ -29,11 +30,13 @@ public class Menu extends Model<Menu> {
     /**
      * 菜单父编号
      */
-	private String pcode;
+	@TableField("p_code")
+	private String pCode;
     /**
      * 当前菜单的所有父菜单编号
      */
-	private String pcodes;
+	@TableField("p_codes")
+	private String pCodes;
     /**
      * 菜单名称
      */
@@ -57,7 +60,8 @@ public class Menu extends Model<Menu> {
     /**
      * 是否是菜单（1：是  0：不是）
      */
-	private Integer ismenu;
+	@TableField("is_menu")
+	private Integer isMenu;
     /**
      * 备注
      */
@@ -69,7 +73,8 @@ public class Menu extends Model<Menu> {
     /**
      * 是否打开:    1:打开   0:不打开
      */
-	private Integer isopen;
+	@TableField("is_open")
+	private Integer isOpen;
 
 
 	public Integer getId() {
@@ -88,20 +93,20 @@ public class Menu extends Model<Menu> {
 		this.code = code;
 	}
 
-	public String getPcode() {
-		return pcode;
+	public String getpCode() {
+		return pCode;
 	}
 
-	public void setPcode(String pcode) {
-		this.pcode = pcode;
+	public void setpCode(String pCode) {
+		this.pCode = pCode;
 	}
 
-	public String getPcodes() {
-		return pcodes;
+	public String getpCodes() {
+		return pCodes;
 	}
 
-	public void setPcodes(String pcodes) {
-		this.pcodes = pcodes;
+	public void setpCodes(String pCodes) {
+		this.pCodes = pCodes;
 	}
 
 	public String getName() {
@@ -144,12 +149,12 @@ public class Menu extends Model<Menu> {
 		this.levels = levels;
 	}
 
-	public Integer getIsmenu() {
-		return ismenu;
+	public Integer getIsMenu() {
+		return isMenu;
 	}
 
-	public void setIsmenu(Integer ismenu) {
-		this.ismenu = ismenu;
+	public void setIsMenu(Integer isMenu) {
+		this.isMenu = isMenu;
 	}
 
 	public String getTips() {
@@ -168,12 +173,12 @@ public class Menu extends Model<Menu> {
 		this.status = status;
 	}
 
-	public Integer getIsopen() {
-		return isopen;
+	public Integer getIsOpen() {
+		return isOpen;
 	}
 
-	public void setIsopen(Integer isopen) {
-		this.isopen = isopen;
+	public void setIsOpen(Integer isOpen) {
+		this.isOpen = isOpen;
 	}
 
 	@Override
@@ -186,17 +191,17 @@ public class Menu extends Model<Menu> {
 		return "Menu{" +
 			"id=" + id +
 			", code=" + code +
-			", pcode=" + pcode +
-			", pcodes=" + pcodes +
+			", pCode=" + pCode +
+			", pCodes=" + pCodes +
 			", name=" + name +
 			", icon=" + icon +
 			", url=" + url +
 			", num=" + num +
 			", levels=" + levels +
-			", ismenu=" + ismenu +
+			", isMenu=" + isMenu +
 			", tips=" + tips +
 			", status=" + status +
-			", isopen=" + isopen +
+			", isOpen=" + isOpen +
 			"}";
 	}
 }

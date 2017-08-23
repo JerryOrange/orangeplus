@@ -3,6 +3,7 @@ package ncu.jerry.orangeplus.modules.sys.entity;
 import com.baomidou.mybatisplus.enums.IdType;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -12,7 +13,7 @@ import java.io.Serializable;
  * </p>
  *
  * @author Jiacheng
- * @since 2017-08-21
+ * @since 2017-08-23
  */
 public class User extends Model<User> {
 
@@ -62,11 +63,13 @@ public class User extends Model<User> {
     /**
      * 角色id
      */
-	private String roleid;
+	@TableField("role_id")
+	private String roleId;
     /**
      * 部门id
      */
-	private Integer deptid;
+	@TableField("dept_id")
+	private Integer deptId;
     /**
      * 状态(1：启用  2：冻结  3：删除）
      */
@@ -74,7 +77,8 @@ public class User extends Model<User> {
     /**
      * 创建时间
      */
-	private Date createtime;
+	@TableField("create_time")
+	private Date createTime;
     /**
      * 保留字段
      */
@@ -161,20 +165,20 @@ public class User extends Model<User> {
 		this.phone = phone;
 	}
 
-	public String getRoleid() {
-		return roleid;
+	public String getRoleId() {
+		return roleId;
 	}
 
-	public void setRoleid(String roleid) {
-		this.roleid = roleid;
+	public void setRoleId(String roleId) {
+		this.roleId = roleId;
 	}
 
-	public Integer getDeptid() {
-		return deptid;
+	public Integer getDeptId() {
+		return deptId;
 	}
 
-	public void setDeptid(Integer deptid) {
-		this.deptid = deptid;
+	public void setDeptId(Integer deptId) {
+		this.deptId = deptId;
 	}
 
 	public Integer getStatus() {
@@ -185,12 +189,12 @@ public class User extends Model<User> {
 		this.status = status;
 	}
 
-	public Date getCreatetime() {
-		return createtime;
+	public Date getCreateTime() {
+		return createTime;
 	}
 
-	public void setCreatetime(Date createtime) {
-		this.createtime = createtime;
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 
 	public Integer getVersion() {
@@ -219,10 +223,10 @@ public class User extends Model<User> {
 			", sex=" + sex +
 			", email=" + email +
 			", phone=" + phone +
-			", roleid=" + roleid +
-			", deptid=" + deptid +
+			", roleId=" + roleId +
+			", deptId=" + deptId +
 			", status=" + status +
-			", createtime=" + createtime +
+			", createTime=" + createTime +
 			", version=" + version +
 			"}";
 	}
