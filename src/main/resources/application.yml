@@ -18,7 +18,7 @@ spring:
 
 ###################  mybatis-plus配置  ###################
 mybatis-plus:
-  mapper-locations: classpath:/mappings/modules/*/*Mapper.xml
+  mapper-locations: classpath:mappings/modules/*/*Mapper.xml
   typeAliasesPackage: ncu.jerry.orangeplus.modules.*.entity
   global-config:
     id-type: 3 #0:数据库ID自增   1:用户输入id  2:全局唯一id(IdWorker)  3:全局唯一ID(uuid)
