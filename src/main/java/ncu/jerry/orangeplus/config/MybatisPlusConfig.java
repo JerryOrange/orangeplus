@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@MapperScan("ncu.jerry.orangeplus.modules.*.mapper*")
+@MapperScan("ncu.jerry.orangeplus.modules.*.mapper")
 public class MybatisPlusConfig {
 
     /**
