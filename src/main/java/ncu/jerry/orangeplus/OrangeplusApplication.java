@@ -1,17 +1,26 @@
 package ncu.jerry.orangeplus;
 
+import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @SpringBootApplication
-public class OrangeplusApplication {
+public class OrangeplusApplication extends WebMvcConfigurerAdapter {
 
+    protected final static Logger logger = LoggerFactory.getLogger(OrangeplusApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(OrangeplusApplication.class, args);
+        logger.info("Application is success!");
 	}
 
     @Bean
