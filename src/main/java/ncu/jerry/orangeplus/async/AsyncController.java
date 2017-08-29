@@ -19,12 +19,8 @@ import java.util.concurrent.Future;
 @RequestMapping("/async")
 public class AsyncController {
 
-    private final AsyncTask task;
-
     @Autowired
-    public AsyncController(AsyncTask task) {
-        this.task = task;
-    }
+    private AsyncTask task;
 
     @RequestMapping(value = "/task", method = RequestMethod.GET)
     @ResponseBody
