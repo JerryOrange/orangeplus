@@ -15,8 +15,8 @@ public class HelloSenderP2P {
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
-    public void send() {
-        String sendMsg = "hello " + new Date();
+    public void send(String msg) {
+        String sendMsg = msg + new Date();
         System.out.println("SenderP2P : " + sendMsg);
         this.rabbitTemplate.convertAndSend("helloQueue", sendMsg);
     }
