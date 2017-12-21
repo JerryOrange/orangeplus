@@ -1,6 +1,7 @@
 package ncu.jerry.orangeplus.rabbitMq.controller;
 
 import ncu.jerry.orangeplus.common.base.Result;
+import ncu.jerry.orangeplus.rabbitMq.P2P.EntitySender;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSender2;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSenderP2P;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,8 @@ public class RabbitMqController {
     private HelloSenderP2P helloSenderP2P;
     @Autowired
     private HelloSender2 helloSender2;
+    @Autowired
+    private EntitySender entitySender;
 
     /**
      * 单生产者-单消费者
@@ -57,6 +60,14 @@ public class RabbitMqController {
             helloSender2.send("hellomsg:" + i);
         }
         return new Result("SUCCESS");
+    }
+
+    /**
+     * 实体类传输测试
+     */
+    @PostMapping("/entityTest")
+    public void entityTest() {
+        entitySender.send();
     }
 
 }
