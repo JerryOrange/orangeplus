@@ -4,6 +4,7 @@ import ncu.jerry.orangeplus.common.base.Result;
 import ncu.jerry.orangeplus.rabbitMq.P2P.EntitySender;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSender2;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSenderP2P;
+import ncu.jerry.orangeplus.rabbitMq.pubsub.TopicSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,8 @@ public class RabbitMqController {
     private HelloSender2 helloSender2;
     @Autowired
     private EntitySender entitySender;
+    @Autowired
+    private TopicSender topicSender;
 
     /**
      * 单生产者-单消费者
@@ -68,6 +71,14 @@ public class RabbitMqController {
     @PostMapping("/entityTest")
     public void entityTest() {
         entitySender.send();
+    }
+
+    /**
+     * topic exchange类型测试
+     */
+    @PostMapping("/topicTest")
+    public void topicTest() {
+        topicSender.send();
     }
 
 }
