@@ -1,9 +1,6 @@
 package ncu.jerry.orangeplus.rabbitMq;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
@@ -41,6 +38,21 @@ public class RabbitMqApplication {
     }
 
     @Bean
+    public Queue AMessage() {
+        return new Queue("fanout.A");
+    }
+
+    @Bean
+    public Queue BMessage() {
+        return new Queue("fanout.B");
+    }
+
+    @Bean
+    public Queue CMessage() {
+        return new Queue("fanout.C");
+    }
+
+    @Bean
     TopicExchange exchange() {
         return new TopicExchange("exchange");
     }
@@ -48,6 +60,11 @@ public class RabbitMqApplication {
     @Bean
     TopicExchange exchange2() {
         return new TopicExchange("exchange2");
+    }
+
+    @Bean
+    FanoutExchange fanoutExchange() {
+        return new FanoutExchange("fanoutExchange");
     }
 
     /**
@@ -81,6 +98,28 @@ public class RabbitMqApplication {
     @Bean
     Binding bindingExchange2Message(Queue queueMessage, TopicExchange exchange2) {
         return BindingBuilder.bind(queueMessage).to(exchange2).with("topic.message");
+    }
+
+    /**
+     * 任何发送到Fanout Exchange的消息都会被转发到与该Exchange绑定(Binding)的所有Queue上
+     *
+     * @param AMessage
+     * @param fanoutExchange
+     * @return
+     */
+    @Bean
+    Binding bindingExchangeA(Queue AMessage,FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(AMessage).to(fanoutExchange);
+    }
+
+    @Bean
+    Binding bindingExchangeB(Queue BMessage, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(BMessage).to(fanoutExchange);
+    }
+
+    @Bean
+    Binding bindingExchangeC(Queue CMessage, FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(CMessage).to(fanoutExchange);
     }
 
 }
