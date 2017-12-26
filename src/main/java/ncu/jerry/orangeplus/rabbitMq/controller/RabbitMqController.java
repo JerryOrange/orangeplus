@@ -4,6 +4,7 @@ import ncu.jerry.orangeplus.common.base.Result;
 import ncu.jerry.orangeplus.rabbitMq.P2P.EntitySender;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSender2;
 import ncu.jerry.orangeplus.rabbitMq.P2P.HelloSenderP2P;
+import ncu.jerry.orangeplus.rabbitMq.pubsub.CallBackSender;
 import ncu.jerry.orangeplus.rabbitMq.pubsub.FanoutSender;
 import ncu.jerry.orangeplus.rabbitMq.pubsub.TopicSender;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,8 @@ public class RabbitMqController {
     private TopicSender topicSender;
     @Autowired
     private FanoutSender fanoutSender;
+    @Autowired
+    private CallBackSender callBackSender;
 
     /**
      * 单生产者-单消费者
@@ -90,6 +93,14 @@ public class RabbitMqController {
     @PostMapping("/fanoutTest")
     public void fanoutTest() {
         fanoutSender.send();
+    }
+
+    /**
+     * 带callback的消息发送
+     */
+    @PostMapping("/callback")
+    public void callbak() {
+        callBackSender.send();
     }
 
 }
