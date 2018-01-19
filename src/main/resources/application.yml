@@ -56,3 +56,8 @@ spring:
     password: guest
     publisher-confirms: true
     virtual-host: /
+  cache:
+    #缓存名称
+    cache-names: guava
+    #缓存最大数量500条, 缓存失效时间 6个小时
+    spec: maximumSize=500,expireAfterWrite=360m
