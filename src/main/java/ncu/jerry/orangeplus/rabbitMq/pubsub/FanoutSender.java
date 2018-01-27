@@ -1,6 +1,8 @@
 package ncu.jerry.orangeplus.rabbitMq.pubsub;
 
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,12 +14,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class FanoutSender {
 
+    protected final static Logger LOGGER = LoggerFactory.getLogger(FanoutSender.class);
+
     @Autowired
     private AmqpTemplate rabbitTemplate;
 
     public void send() {
         String msgString="fanoutSender :hello";
-        System.out.println(msgString);
+        LOGGER.info(msgString);
         //这种模式不需要routingKey
         this.rabbitTemplate.convertAndSend("fanoutExchange", StringUtils.EMPTY, msgString);
     }
