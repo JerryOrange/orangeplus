@@ -9,7 +9,7 @@ logging:
 ###################  spring配置  ###################
 spring:
   profiles:
-    active: dev
+    active: h2dev
   mvc:
     static-path-pattern: /static/**
     view:
@@ -36,9 +36,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql语句,调试用
 
 ---
-##########################################################
-###################  开发环境的profile  ###################
-##########################################################
+################### MySQL开发环境profile ###################
 spring:
   profiles: dev
   datasource:
@@ -61,3 +59,23 @@ spring:
     cache-names: guava
     #缓存最大数量500条, 缓存失效时间 6个小时
     spec: maximumSize=500,expireAfterWrite=360m
+
+---
+################### H2开发环境profile ###################
+spring:
+  profiles: h2dev
+  #h2
+  datasource:
+    platform: h2
+    schema: classpath:h2sql/schema.sql
+    data: classpath:h2sql/data.sql
+  #rabbitmq
+  application:
+    name: springboot-rabbitmq
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+    publisher-confirms: true
+    virtual-host: /
