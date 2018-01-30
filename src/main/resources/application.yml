@@ -69,6 +69,11 @@ spring:
     platform: h2
     schema: classpath:h2sql/schema.sql
     data: classpath:h2sql/data.sql
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
   #rabbitmq
   application:
     name: springboot-rabbitmq
