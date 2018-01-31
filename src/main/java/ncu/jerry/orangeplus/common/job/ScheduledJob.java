@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  * Spring @Scheduled 实现定时任务
- *
+ * <p>
  * Created by Jiacheng on 2018/1/27.
  */
 @Component
@@ -57,5 +57,12 @@ public class ScheduledJob {
     @Scheduled(cron = "0 0 0/1 * * ? ")
     public void goWork() throws Exception {
         LOGGER.debug("每一小时执行一次的定时任务：" + new Date());
+    }
+
+    /**
+     * Quartz定时任务
+     */
+    public void sayHello() {
+        LOGGER.debug("=== Quartz === Hello world");
     }
 }
