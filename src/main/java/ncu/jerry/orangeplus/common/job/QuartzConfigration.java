@@ -1,9 +1,11 @@
 package ncu.jerry.orangeplus.common.job;
 
+import org.quartz.Trigger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 
 /**
  * Quartz配置类
@@ -50,5 +52,23 @@ public class QuartzConfigration {
         //trigger的name
         tigger.setName("group-job");
         return tigger;
+    }
+
+    /**
+     * 定义quartz调度工厂
+     *
+     * @param cronJobTrigger
+     * @return
+     */
+    @Bean(name = "scheduler")
+    public SchedulerFactoryBean schedulerFactory(Trigger cronJobTrigger) {
+        SchedulerFactoryBean bean = new SchedulerFactoryBean();
+        //用于quartz集群,QuartzScheduler 启动时更新己存在的Job
+        bean.setOverwriteExistingJobs(true);
+        //延时启动，应用启动2秒后
+        bean.setStartupDelay(2);
+        //注册触发器
+        bean.setTriggers(cronJobTrigger);
+        return bean;
     }
 }
