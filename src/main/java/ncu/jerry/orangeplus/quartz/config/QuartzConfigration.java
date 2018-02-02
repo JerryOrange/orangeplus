@@ -1,5 +1,6 @@
-package ncu.jerry.orangeplus.common.job;
+package ncu.jerry.orangeplus.quartz.config;
 
+import ncu.jerry.orangeplus.quartz.job.ScheduledJob;
 import org.quartz.Trigger;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
