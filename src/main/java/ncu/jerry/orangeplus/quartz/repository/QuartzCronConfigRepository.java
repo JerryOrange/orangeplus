@@ -1,5 +1,6 @@
-package ncu.jerry.orangeplus.common.job;
+package ncu.jerry.orangeplus.quartz.repository;
 
+import ncu.jerry.orangeplus.quartz.entity.QuartzCronConfig;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
