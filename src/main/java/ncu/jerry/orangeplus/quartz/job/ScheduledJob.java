@@ -1,4 +1,4 @@
-package ncu.jerry.orangeplus.common.job;
+package ncu.jerry.orangeplus.quartz.job;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
