@@ -1,4 +1,4 @@
-package ncu.jerry.orangeplus.common.job;
+package ncu.jerry.orangeplus.quartz.entity;
 
 import javax.persistence.*;
 
