@@ -1,4 +1,4 @@
-package generator;
+package ncu.jerry.orangeplus.mybatisplus;
 
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;

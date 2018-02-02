@@ -1,4 +1,4 @@
-package ncu.jerry.orangeplus.config;
+package ncu.jerry.orangeplus.mybatisplus;
 
 import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import org.mybatis.spring.annotation.MapperScan;
