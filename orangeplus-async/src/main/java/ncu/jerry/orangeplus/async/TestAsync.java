@@ -1,16 +1,10 @@
 package ncu.jerry.orangeplus.async;
 
-import ncu.jerry.orangeplus.common.utils.SpringContextHolder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
-import org.springframework.stereotype.Component;
 import org.testng.annotations.Test;
 
-
-import javax.swing.*;
 import java.util.concurrent.Future;
 
 /**
