@@ -12,10 +12,6 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.Date;
-
 /**
  * 以静态变量保存Spring ApplicationContext, 可在任何代码任何地方任何时候取出ApplicaitonContext.
  * 
@@ -36,6 +32,14 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	public static ApplicationContext getApplicationContext() {
 		assertContextInjected();
 		return applicationContext;
+	}
+
+	/**
+	 * 实现ApplicationContextAware接口, 注入Context到静态变量中.
+	 */
+	@Override
+	public void setApplicationContext(ApplicationContext applicationContext) {
+		SpringContextHolder.applicationContext = applicationContext;
 	}
 
 	/**
@@ -66,11 +70,10 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	}
 
 	/**
-	 * 实现ApplicationContextAware接口, 注入Context到静态变量中.
+	 * 检查ApplicationContext不为空.
 	 */
-	@Override
-	public void setApplicationContext(ApplicationContext applicationContext) {
-		SpringContextHolder.applicationContext = applicationContext;
+	private static void assertContextInjected() {
+		Validate.validState(applicationContext != null, "applicaitonContext属性未注入, 请在applicationContext.xml中定义SpringContextHolder.");
 	}
 
 	/**
@@ -79,12 +82,5 @@ public class SpringContextHolder implements ApplicationContextAware, DisposableB
 	@Override
 	public void destroy() throws Exception {
 		SpringContextHolder.clearHolder();
-	}
-
-	/**
-	 * 检查ApplicationContext不为空.
-	 */
-	private static void assertContextInjected() {
-		Validate.validState(applicationContext != null, "applicaitonContext属性未注入, 请在applicationContext.xml中定义SpringContextHolder.");
 	}
 }
