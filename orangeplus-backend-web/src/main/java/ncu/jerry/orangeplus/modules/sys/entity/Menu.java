@@ -1,0 +1,208 @@
+package ncu.jerry.orangeplus.modules.sys.entity;
+
+import com.baomidou.mybatisplus.activerecord.Model;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.enums.IdType;
+
+import java.io.Serializable;
+
+/**
+ * <p>
+ * 菜单表
+ * </p>
+ *
+ * @author Jiacheng
+ * @since 2017-08-23
+ */
+public class Menu extends Model<Menu> {
+
+    private static final long serialVersionUID = 1L;
+
+    /**
+     * 主键id
+     */
+	@TableId(value="id", type= IdType.AUTO)
+	private Integer id;
+    /**
+     * 菜单编号
+     */
+	private String code;
+    /**
+     * 菜单父编号
+     */
+	@TableField("p_code")
+	private String pCode;
+    /**
+     * 当前菜单的所有父菜单编号
+     */
+	@TableField("p_codes")
+	private String pCodes;
+    /**
+     * 菜单名称
+     */
+	private String name;
+    /**
+     * 菜单图标
+     */
+	private String icon;
+    /**
+     * url地址
+     */
+	private String url;
+    /**
+     * 菜单排序号
+     */
+	private Integer num;
+    /**
+     * 菜单层级
+     */
+	private Integer levels;
+    /**
+     * 是否是菜单（1：是  0：不是）
+     */
+	@TableField("is_menu")
+	private Integer isMenu;
+    /**
+     * 备注
+     */
+	private String tips;
+    /**
+     * 菜单状态 :  1:启用   0:不启用
+     */
+	private Integer status;
+    /**
+     * 是否打开:    1:打开   0:不打开
+     */
+	@TableField("is_open")
+	private Integer isOpen;
+
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getCode() {
+		return code;
+	}
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+	public String getpCode() {
+		return pCode;
+	}
+
+	public void setpCode(String pCode) {
+		this.pCode = pCode;
+	}
+
+	public String getpCodes() {
+		return pCodes;
+	}
+
+	public void setpCodes(String pCodes) {
+		this.pCodes = pCodes;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getIcon() {
+		return icon;
+	}
+
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
+
+	public String getUrl() {
+		return url;
+	}
+
+	public void setUrl(String url) {
+		this.url = url;
+	}
+
+	public Integer getNum() {
+		return num;
+	}
+
+	public void setNum(Integer num) {
+		this.num = num;
+	}
+
+	public Integer getLevels() {
+		return levels;
+	}
+
+	public void setLevels(Integer levels) {
+		this.levels = levels;
+	}
+
+	public Integer getIsMenu() {
+		return isMenu;
+	}
+
+	public void setIsMenu(Integer isMenu) {
+		this.isMenu = isMenu;
+	}
+
+	public String getTips() {
+		return tips;
+	}
+
+	public void setTips(String tips) {
+		this.tips = tips;
+	}
+
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public Integer getIsOpen() {
+		return isOpen;
+	}
+
+	public void setIsOpen(Integer isOpen) {
+		this.isOpen = isOpen;
+	}
+
+	@Override
+	protected Serializable pkVal() {
+		return this.id;
+	}
+
+	@Override
+	public String toString() {
+		return "Menu{" +
+			"id=" + id +
+			", code=" + code +
+			", pCode=" + pCode +
+			", pCodes=" + pCodes +
+			", name=" + name +
+			", icon=" + icon +
+			", url=" + url +
+			", num=" + num +
+			", levels=" + levels +
+			", isMenu=" + isMenu +
+			", tips=" + tips +
+			", status=" + status +
+			", isOpen=" + isOpen +
+			"}";
+	}
+}
