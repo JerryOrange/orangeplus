@@ -13,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Created by Jiacheng on 2017/12/18.
  * RabbitMQ 测试类
+ *
+ * Created by Jiacheng on 2017/12/18.
  */
 @RestController
 @RequestMapping(value = "/rabbit")

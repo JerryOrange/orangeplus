@@ -1,13 +1,15 @@
 package ncu.jerry.orangeplus.rabbitMq.P2P;
 
-import ncu.jerry.orangeplus.modules.sys.entity.User;
+
+import ncu.jerry.orangeplus.rabbitMq.entity.User;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Jiacheng on 2017/12/21.
  * 实体类传输生产者
+ *
+ * Created by Jiacheng on 2017/12/21.
  */
 @Component
 public class EntitySender {

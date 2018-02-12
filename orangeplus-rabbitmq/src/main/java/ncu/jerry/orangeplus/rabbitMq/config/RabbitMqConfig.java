@@ -1,17 +1,17 @@
-package ncu.jerry.orangeplus.rabbitMq;
+package ncu.jerry.orangeplus.rabbitMq.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Jiacheng on 2017/12/18.
- * <p>
  * 创建初始化队列
  * Initializing exchange, binding exchange with routingKey
+ *
+ * Created by Jiacheng on 2017/12/18.
  */
 @Component
-public class RabbitMqApplication {
+public class RabbitMqConfig {
 
     final static String queueName = "helloQueue";
     final static String userQueueName = "userQueue";

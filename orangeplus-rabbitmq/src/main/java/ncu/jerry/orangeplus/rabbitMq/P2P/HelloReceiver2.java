@@ -5,8 +5,9 @@ import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Jiacheng on 2017/12/19.
  * 单生产者-多消费者
+ *
+ * Created by Jiacheng on 2017/12/19.
  */
 @Component
 @RabbitListener(queues = "helloQueue")

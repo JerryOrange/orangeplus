@@ -7,8 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Jiacheng on 2017/12/22.
  * topic Exchange 生产者
+ *
+ * Created by Jiacheng on 2017/12/22.
  */
 @Component
 public class TopicSender {

@@ -10,12 +10,13 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 
 /**
- * Created by Jiacheng on 2017/12/26.
  * 发布确认机制：
  * (1) 需置CachingConnectionFactory的publisherConfirms属性为true；
  * (2) 生产者需调用setConfirmCallback(ConfirmCallback callback)，Confirms就会回调给生产者；
  * (3) 消费者需考虑消息去重处理。
  * 注意：一个RabbitTemplate只能支持一个ConfirmCallback。
+ *
+ * Created by Jiacheng on 2017/12/26.
  */
 @Component
 public class CallBackSender implements RabbitTemplate.ConfirmCallback{

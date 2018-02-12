@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 import java.util.Date;
 
 /**
- * Created by Jiacheng on 2017/12/20.
  * 生产者2
+ *
+ * Created by Jiacheng on 2017/12/20.
  */
 @Component
 public class HelloSender2 {
